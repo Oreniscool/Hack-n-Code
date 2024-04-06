@@ -36,11 +36,13 @@ const router = createBrowserRouter([
         element: <Logout />,
       },
       {
-        path: 'tapthepair',
-        element: <Tapthepair />, 
         path: 'programs',
         element: <Programs />,
       },
+      {
+        path: 'tapthepair',
+        element: <Tapthepair />, 
+      }
     ],
   },
 ]);
