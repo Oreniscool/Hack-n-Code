@@ -7,6 +7,7 @@ import {
   Register,
   Home,
   Programs,
+  Tapthepair,
 } from './pages';
 import { ToastContainer, toast } from 'react-toastify';
 
