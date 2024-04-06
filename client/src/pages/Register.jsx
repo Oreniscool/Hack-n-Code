@@ -31,10 +31,9 @@ function reducer(state, action){
       case 'PLANG2_CHANGE' : return {...state , primarylanguage2: action.value};
       case 'PLANG3_CHANGE' : return {...state , primarylanguage3: action.value};
       case 'TLANG1_CHANGE' : return {...state , targetlanguage1: action.value};
-      case 'TLANG2_CHANGE' : return {...state , targetlanguage1: action.value};
+      case 'TLANG2_CHANGE' : return {...state , targetlanguage2: action.value};
       case 'NAME_CHANGE' : return {...state , name: action.value};
       case 'COURSE_CHANGE' : return {...state , interestedPlan: action.value};
-      case 'FORM_SUBMITTED' : return {...state , submitted : action.value};
   }
 }
 
@@ -79,7 +78,7 @@ const onTLang2Change = (e)=>{
     let primary_language_2 = e.target.primarylanguage2.value;
     let primary_language_3 = e.target.primarylanguage3.value;
     let target_language_1 = e.target.targetlanguage1.value;
-    let target_language_2 = e.target.primarylanguage1.value;
+    let target_language_2 = e.target.targetlanguage2.value;
 
     if(name.length > 0 && lastname.length > 0 && email.length > 0 && password.length > 0 && confirmPassword.length > 0){
 

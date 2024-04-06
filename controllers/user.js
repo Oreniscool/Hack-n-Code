@@ -50,12 +50,17 @@ const getAllUsers = async (req, res) => {
 const register = async (req, res) => {
   let foundUser = await User.findOne({ email: req.body.email });
   if (foundUser === null) {
-    let { username, email, password } = req.body;
+    let { username, email, password,primary_language_1,primary_language_2,primary_language_3,target_language_1,target_language_2 } = req.body;
     if (username.length && email.length && password.length) {
       const person = new User({
         name: username,
         email: email,
         password: password,
+        target_language_1: target_language_1,
+        target_language_2: target_language_2,
+        primary_language_1: primary_language_1,
+        primary_language_2: primary_language_2,
+        primary_language_3: primary_language_3
       });
       await person.save();
       return res.status(201).json({ person });
