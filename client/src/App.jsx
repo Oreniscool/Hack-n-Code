@@ -7,8 +7,10 @@ import {
   Register,
   Home,
   Programs,
+  Tapthepair,
 } from './pages';
 import { ToastContainer, toast } from 'react-toastify';
+import WordChallenge from "./pages/WordChallenge";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
         path: 'programs',
         element: <Programs />,
       },
+      {
+        path: 'tapthepair',
+        element: <Tapthepair />, 
+      }
     ],
   },
 ]);
