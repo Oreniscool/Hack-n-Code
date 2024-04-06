@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+.dinolingo-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.navbar-options {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
+
+.get-started {
+  border: 2px solid;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 3rem;
+  padding: 10px;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none m !important;
+}
+.get-started:hover {
+  background-color: black;
+  color: white;
+}
+
+.lang {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 15px;
+  background-color: transparent;
+  border-radius: 1.5rem;
+  transition: 300ms ease-in-out all;
+}
+.lang:hover {
+  background-color: #d6b4ff;
+  border: none;
+  transform: scale(1.05);
+}
+
+.get-fluent {
+  border: none;
+  padding: 10px;
+  font-size: 1.3rem;
+  color: black;
+  background-color: #6de59d;
+  border-radius: 2rem;
+  width: 18%;
+  transition: all 500ms ease-in-out;
+}
+.get-fluent:hover {
+  background-color: #6de59dc6;
+  box-shadow: 0 0 30px 5px #6de59d;
+}
+.right-button {
+  transition: transform 100ms ease-in-out;
+}
+.people-button:hover .right-button {
+  transform: translateX(5px);
+}
+.text-cta {
+  background: linear-gradient(
+    to right,
+    #7953cd 20%,
+    #00affa 30%,
+    #0190cd 70%,
+    #764ada 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.option {
+  font-size: 1.2rem;
+  transition: all 300ms ease-in-out;
+}
+.option:hover {
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
