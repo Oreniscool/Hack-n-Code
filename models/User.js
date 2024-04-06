@@ -26,6 +26,22 @@ const UserSchema = new mongoose.Schema({
         required: [true, 'Please provide password'],
         minlength: 3
     },
+    primary_language_1: {
+        type: String,
+        required: [true, 'Please provide primary language']
+    },
+    secondary_language_2: {
+        type: String,
+        required: [true, 'Please provide secondary language']
+    },
+    tertiary_language_3: {
+        type: String,
+        required: [true, 'Please provide tertiary language']
+    },
+    target_language_1: {
+        type: String,
+        required: [true, 'Please provide target language']
+    },
 });
 
 UserSchema.pre("save", async function(){
