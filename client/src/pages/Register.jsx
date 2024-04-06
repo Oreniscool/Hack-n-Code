@@ -135,7 +135,7 @@ const Login = () => {
             <img src={Logo} alt="" />
           </div>
           <div className="register-center">
-            <h2>Welcome to our website!</h2>
+            <h2>Welcome to Dinolingo!</h2>
             <p>Please enter your details</p>
             <form onSubmit={handleRegisterSubmit}>
               <input type="text" placeholder="Name" name="name" required={true} />
