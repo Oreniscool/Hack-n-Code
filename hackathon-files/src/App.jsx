@@ -1,10 +1,11 @@
-import { Home } from './components/pages/index';
+import { Form, Home } from './components/pages/index';
 import './App.css';
 
 function App() {
   return (
     <>
-      <Home></Home>
+      {/* <Home></Home> */}
+      <Form></Form>
     </>
   );
 }
