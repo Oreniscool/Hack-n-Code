@@ -54,6 +54,7 @@ function App() {
     <>
       <RouterProvider router={router} />
       <ToastContainer position="top-center" />
+      {/* <WordChallenge></WordChallenge> */}
     </>
   );
 }

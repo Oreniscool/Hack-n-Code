@@ -5,7 +5,14 @@ import { useState } from "react";
 
 const WordChallenge = ()=>{
 
-    // const [lang1,setLang1] = useState('English');
+    const [word, setWord] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+
+    const [ans, setAns] = useState('');
+    const [score, setScore] = useState(0);
+    
+
     const [lang2, setLang2]= useState('English');
 
     const langs= languages.map((language)=> language.name);
@@ -20,41 +27,42 @@ const WordChallenge = ()=>{
     
     */
 
-        const check = async(e)=>{
+        const check = async()=>{
+            // console.log(lang2, languages);
             var lang_code="";
             for(var i=0;i<languages.length;i++){
-                if(languages.name === lang2){
-                    lang_code = languages.code;
+                if(languages[i].name.toUpperCase() === lang2.toUpperCase()){
+                    lang_code = languages[i].code;
                 }
             }
-            const url = 'https://translate-plus.p.rapidapi.com/translate';
-            const options = {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json',
-                    'X-RapidAPI-Key': 'e4ea804d33msh4a421e24fe50878p18d071jsn07bf4c2002af',
-                    'X-RapidAPI-Host': 'translate-plus.p.rapidapi.com'
-                },
-                body: {
-                    text: word.toUpperCase(),
-                    source: 'en',
-                    target: lang_code,
-                }
-            };
-            try {
-                const response = await fetch(url, options);
-                const result = await response.text();
-                console.log(result);
-            } catch (error) {
-                console.error(error);
+            console.log(lang_code);
+            var externalData=[];
+            try{
+                const resp = await fetch(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyDsczIcr3Xfe-aDoTop6sMu9F-ITlh0aD0&q=${word}&target=${lang_code}`);
+                const data = await resp.json();
+                console.log(data);
+                externalData = data;
+            } catch(e){
+                throw new Error();
             }
+            if(ans === externalData.data.translations[0].translatedText){
+                setScore((prev) => {
+                    const newState = prev+1;
+                    return newState;
+                })
+                console.log(score);             
+            }
+            
         }
 
-        const [word, setWord] = useState('');
-        const [loading, setLoading] = useState(false);
-        const [error, setError] = useState('');
+        
       
         useEffect(() => {
+
+            if(score >=5 ){
+                //Put code here to redirect to dashboard
+            }
+
           const fetchData = async () => {
             setLoading(true);
             setError('');
@@ -73,7 +81,7 @@ const WordChallenge = ()=>{
           };
       
           fetchData();
-        }, []);
+        }, [score]);
 
 
     return (<>
@@ -100,11 +108,14 @@ const WordChallenge = ()=>{
                 <h3>INSTRUCTIONS</h3>
                 <p>1. Source Language is the language in which the word is generated</p>
                 <p>2. Target Language is the language in which you have to guess the word</p>
-                <p>3. As soon as you guess a new word will appear</p>
+                <p>3. As soon as you guess a new word will appear </p>
+                <p>4. This process will continue till you are able to translate 5 words</p>
                 <h1 className="question">{word.toUpperCase()}</h1>
             </div>
             <div className="bottom-container">
-            <input onChange={check} type="text" className="answer" name="answer" placeholder="Enter your answer"/>
+                <input type="text" className="answer" name="answer" placeholder="Enter your answer" onChange={(e)=>setAns(e.target.value)}/>
+                <button onClick={check} className="submit">SUBMIT</button>
+                <h3>SCORE: {score}/5</h3>
             </div>
         </div>
             
