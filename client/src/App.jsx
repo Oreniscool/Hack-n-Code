@@ -2,6 +2,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Dashboard, HomeLayout, Landing, Login, Logout, Register } from "./pages";
 import { ToastContainer, toast } from 'react-toastify';
+import WordChallenge from "./pages/WordChallenge";
 
 const router = createBrowserRouter([
   {
@@ -37,8 +38,9 @@ function App() {
 
   return (
     <>
-        <RouterProvider router={router} />
-        <ToastContainer position='top-center' />
+      <WordChallenge> </WordChallenge>
+        {/* <RouterProvider router={router} />
+        <ToastContainer position='top-center' /> */}
     </>
   )
 }
