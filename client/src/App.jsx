@@ -1,5 +1,13 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Dashboard, HomeLayout, Login, Logout, Register, Home , Tapthepair} from './pages';
+import {
+  Dashboard,
+  HomeLayout,
+  Login,
+  Logout,
+  Register,
+  Home,
+  Programs,
+} from './pages';
 import { ToastContainer, toast } from 'react-toastify';
 
 const router = createBrowserRouter([
@@ -30,6 +38,8 @@ const router = createBrowserRouter([
       {
         path: 'tapthepair',
         element: <Tapthepair />, 
+        path: 'programs',
+        element: <Programs />,
       },
     ],
   },

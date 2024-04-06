@@ -2,6 +2,7 @@ import '../styles/Home.css';
 import people from '../assets/people.png';
 import translate from '../assets/translation.png';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 const Home = () => {
   return (
     <div
@@ -165,28 +166,5 @@ const Languages = () => {
     </div>
   );
 };
-const Navbar = () => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        margin: '30px',
-        alignItems: 'center',
-        width: '90%',
-      }}
-    >
-      <h1 className="dinolingo-name">Dinolingo</h1>
-      <div className="navbar-options">
-        <p className="option">Home</p>
-        <p className="option">Programs</p>
-        <p className="option">About us</p>
-        <p className="option">Support</p>
-        <Link to="/login" className="get-started">
-          Get started
-        </Link>
-      </div>
-    </div>
-  );
-};
+
 export default Home;
