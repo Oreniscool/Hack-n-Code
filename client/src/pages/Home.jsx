@@ -113,7 +113,9 @@ const Board = () => {
           Interactive lessons, quizzes, and progress tracking to accelerate your
           language learning journey
         </h2>
-        <button className="get-fluent">Get Fluent</button>
+        <Link to="/login" className="get-fluent">
+          Get Fluent
+        </Link>
       </div>
       <Languages />
     </div>
