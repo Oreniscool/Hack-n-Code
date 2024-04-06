@@ -1,0 +1,1 @@
+export const Courses = ["Short term 3 month" , "Intermediate 6 month" , "Long term 12 month"];
