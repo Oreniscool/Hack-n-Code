@@ -46,6 +46,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide target language']
     },
+    course: {
+        type: String,
+        required: [true, 'Please provide course']
+    }
 });
 
 UserSchema.pre("save", async function(){

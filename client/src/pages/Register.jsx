@@ -50,21 +50,24 @@ const Login = () => {
   }
 
   const onLang2Change = (e)=>{
-    dispatch({type : 'PLANG2_CHANGE',  value: e.target.value} );
-}
+      dispatch({type : 'PLANG2_CHANGE',  value: e.target.value} );
+  }
 
-const onLang3Change = (e)=>{
-  dispatch({type : 'PLANG3_CHANGE',  value: e.target.value} );
-}
+  const onLang3Change = (e)=>{
+    dispatch({type : 'PLANG3_CHANGE',  value: e.target.value} );
+  }
 
-const onTLang1Change = (e)=>{
-  dispatch({type : 'TLANG1_CHANGE',  value: e.target.value} );
-}
+  const onTLang1Change = (e)=>{
+    dispatch({type : 'TLANG1_CHANGE',  value: e.target.value} );
+  }
 
-const onTLang2Change = (e)=>{
-  dispatch({type : 'TLANG2_CHANGE',  value: e.target.value} );
-}
-
+  const onTLang2Change = (e)=>{
+    dispatch({type : 'TLANG2_CHANGE',  value: e.target.value} );
+    
+  }
+  const onCourseChange = (e) =>{
+    dispatch({type:'COURSE_CHANGE' , value: e.target.value})
+  }
 
   const handleRegisterSubmit = async (e) => {
     console.log(e.target.primarylanguage1.value);
@@ -79,6 +82,7 @@ const onTLang2Change = (e)=>{
     let primary_language_3 = e.target.primarylanguage3.value;
     let target_language_1 = e.target.targetlanguage1.value;
     let target_language_2 = e.target.targetlanguage2.value;
+    let course = e.target.course.value;
 
     if(name.length > 0 && lastname.length > 0 && email.length > 0 && password.length > 0 && confirmPassword.length > 0){
 
@@ -91,7 +95,8 @@ const onTLang2Change = (e)=>{
           primary_language_2,
           primary_language_3,
           target_language_1,
-          target_language_2
+          target_language_2,
+          course
         };
         try{
         const response = await axios.post("http://localhost:3000/api/v1/register", formData);
@@ -181,6 +186,14 @@ const onTLang2Change = (e)=>{
                 <select onChange={onTLang2Change} type="text" id="targetlanguage2" className="input" name="targetlanguage2"  list="langs">
                 {languages.map((langauge)=>{
                     return (<option key={langauge}>{langauge}</option>);
+                })}
+                </select>
+              </div>
+              <div>
+              <label htmlFor="course"> Select course</label>
+                <select onChange={onCourseChange} type="text" id="course" className="input" name="course">
+                {Courses.map((course) => {
+                    return <option key={course}>{course}</option>
                 })}
                 </select>
               </div>
