@@ -1,48 +1,61 @@
-
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Dashboard, HomeLayout, Landing, Login, Logout, Register } from "./pages";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  Dashboard,
+  HomeLayout,
+  Login,
+  Logout,
+  Register,
+  Home,
+  Programs,
+  Tapthepair,
+} from './pages';
 import { ToastContainer, toast } from 'react-toastify';
 import WordChallenge from "./pages/WordChallenge";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <HomeLayout />,
     children: [
       {
         index: true,
-        element: <Landing />,
+        element: <Home />,
       },
       {
-        path: "login",
+        path: 'login',
         element: <Login />,
       },
       {
-        path: "register",
+        path: 'register',
         element: <Register />,
       },
       {
-        path: "dashboard",
+        path: 'dashboard',
         element: <Dashboard />,
       },
       {
-        path: "logout",
+        path: 'logout',
         element: <Logout />,
+      },
+      {
+        path: 'programs',
+        element: <Programs />,
+      },
+      {
+        path: 'tapthepair',
+        element: <Tapthepair />, 
       }
     ],
   },
 ]);
 
 function App() {
-
-
   return (
     <>
-      <WordChallenge> </WordChallenge>
-        {/* <RouterProvider router={router} />
-        <ToastContainer position='top-center' /> */}
+      <RouterProvider router={router} />
+      <ToastContainer position="top-center" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
