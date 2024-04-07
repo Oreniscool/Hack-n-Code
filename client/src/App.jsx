@@ -44,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: 'tapthepair',
         element: <Tapthepair />, 
+      },
+      {
+        path: 'wordchallenge',
+        element: <WordChallenge />, 
       }
     ],
   },

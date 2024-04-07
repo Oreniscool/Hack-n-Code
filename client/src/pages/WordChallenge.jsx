@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "../styles/WordChallenge.css";
 import { languages } from "../assets/languages2";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const WordChallenge = ()=>{
 
@@ -60,7 +61,7 @@ const WordChallenge = ()=>{
         useEffect(() => {
 
             if(score >=5 ){
-                //Put code here to redirect to dashboard
+                window.location.href = "/dashboard";
             }
 
           const fetchData = async () => {
