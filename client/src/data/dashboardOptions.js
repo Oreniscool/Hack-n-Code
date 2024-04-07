@@ -9,25 +9,25 @@ const dashboardOptions = [
     id: 1,
     name: 'Dashboard',
     icon: 'fa-solid fa-chart-simple',
-    link: '/',
+    link: '/Dashboard',
   },
   {
     id: 2,
-    name: 'Challenges',
+    name: 'Match The Pairs',
     icon: 'fa-solid fa-clock-rotate-left',
-    link: '/',
+    link: '/Tapthepair',
   },
   {
     id: 3,
-    name: 'Theory',
+    name: 'Translate Challenge',
     icon: 'fa-solid fa-book-open',
-    link: '/',
+    link: '/WordChallenge',
   },
   {
     id: 4,
     name: 'Chat',
     icon: 'fa-solid fa-message',
-    link: '/',
+    link: '/ChatWindow',
   },
 ];
 

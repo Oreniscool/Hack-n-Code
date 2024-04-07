@@ -1,7 +1,7 @@
 const programInfo = [
   {
     id: 0,
-    name: 'beginner',
+    name: 'Beginner',
     period: 3,
     features: [
       'Basic vocabulary acquisition',
@@ -13,7 +13,7 @@ const programInfo = [
   },
   {
     id: 1,
-    name: 'intermediate',
+    name: 'Intermediate',
     period: 6,
     features: [
       'Expanded vocabulary development',
@@ -26,7 +26,7 @@ const programInfo = [
   },
   {
     id: 2,
-    name: 'advanced',
+    name: 'Advanced',
     period: 12,
     features: [
       'Advanced vocabulary enrichment',

@@ -234,8 +234,9 @@ const Sidebar = () => {
         }}
       >
         {dashboardOptions.map((option) => (
-          <div
+          <Link
             key={option.id}
+            to={option.link}
             className="dashboard-option"
             style={{
               display: 'flex',
@@ -246,7 +247,7 @@ const Sidebar = () => {
           >
             <FontAwesomeIcon icon={option.icon} />
             <p>{option.name}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
