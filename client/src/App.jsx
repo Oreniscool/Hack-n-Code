@@ -8,6 +8,7 @@ import {
   Home,
   Programs,
   Tapthepair,
+  ChatWindow
 } from './pages';
 import { ToastContainer, toast } from 'react-toastify';
 import WordChallenge from "./pages/WordChallenge";
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: 'wordchallenge',
         element: <WordChallenge />, 
+      },
+      {
+        path: 'chatwindow',
+        element: <ChatWindow />,
       }
     ],
   },

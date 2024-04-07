@@ -7,3 +7,5 @@ export { default as Register } from './Register';
 export { default as Logout } from './Logout';
 
 export { default as Tapthepair } from './Tapthepair';
+export { default as WordChallenge } from './WordChallenge';
+export { default as ChatWindow } from './ChatWindow';
