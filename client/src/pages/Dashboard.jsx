@@ -168,6 +168,13 @@ const Skill = ({ name, progress }) => {
 };
 const Topbar = () => {
   const [currentDate, setCurrentDate] = useState(getDate());
+  const toggleLogout = (e) => {
+    if (!e.target.lastElementChild) {
+      e.target = e.target.parentElement;
+    }
+    e.target.lastElementChild.classList.toggle('display');
+  };
+
   return (
     <div
       style={{
@@ -184,11 +191,28 @@ const Topbar = () => {
           style={{ fontSize: '1.2rem', color: '#c5a9d6' }}
         >{`Let's continue`}</span>
       </p>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <div className="profile">
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+          position: 'relative',
+        }}
+      >
+        <button type="button" className="profile" onClick={toggleLogout}>
           <FontAwesomeIcon icon="fa-solid fa-user" />
           <p style={{ fontSize: '1.1rem' }}>Oren Coelho</p>
-        </div>
+          <Link
+            to="/logout"
+            className="logout"
+            style={{
+              position: 'absolute',
+              transform: 'translateY(120%) translateX(50%)',
+            }}
+          >
+            Logout
+          </Link>
+        </button>
         <div className="date">
           <FontAwesomeIcon icon="fa-regular fa-calendar" />
           <p>{currentDate}</p>
