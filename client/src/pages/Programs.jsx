@@ -43,16 +43,6 @@ const Program = ({ name, period, features, status }) => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     let cards = Array.from(document.querySelectorAll('.card'));
-  //     cards.forEach((card) => {
-  //       card.style.display = 'flex';
-  //       card.style.transform = 'translate(0,0)';
-  //     });
-  //   }, 2000);
-  // });
-
   return (
     <div className={name + ' ' + classList.join(' ')}>
       <h2>{name.toUpperCase()}</h2>
