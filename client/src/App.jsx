@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   Dashboard,
   HomeLayout,
@@ -10,7 +11,10 @@ import {
   Tapthepair,
 } from './pages';
 import { ToastContainer, toast } from 'react-toastify';
-import WordChallenge from "./pages/WordChallenge";
+import WordChallenge from './pages/WordChallenge';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 
 const router = createBrowserRouter([
   {
@@ -43,8 +47,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'tapthepair',
-        element: <Tapthepair />, 
-      }
+        element: <Tapthepair />,
+      },
     ],
   },
 ]);
@@ -59,3 +63,4 @@ function App() {
 }
 
 export default App;
+library.add(fab, fas, far);
