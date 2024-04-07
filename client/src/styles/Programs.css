@@ -32,17 +32,17 @@
   border-radius: 1rem;
 }
 
-.beginner {
+.Beginner {
   transform: translateX(-300%);
   animation: right-move 1.5s ease-out forwards;
 }
 
-.intermediate {
+.Intermediate {
   transform: translateY(-300%);
   animation: down-move 2s ease-out forwards;
 }
 
-.advanced {
+.Advanced {
   transform: translateX(300%);
   animation: left-move 1.5s ease-out forwards;
 }

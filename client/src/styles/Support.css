@@ -1,0 +1,16 @@
+.location,
+.phone,
+.email {
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.location:hover {
+  color: red;
+}
+.phone:hover {
+  color: greenyellow;
+}
+.email:hover {
+  color: aqua;
+}
