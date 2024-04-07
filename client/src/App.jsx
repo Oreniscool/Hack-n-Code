@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: 'chatwindow',
         element: <ChatWindow />,
-      },
+      }
     ],
   },
 ]);
