@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'; 
 import "../styles/tapthepair.css";
 
 const TapThePair = () => {
@@ -13,7 +12,6 @@ const TapThePair = () => {
   const [selectedTranslation, setSelectedTranslation] = useState(null);
   const [correctMatchMessage, setCorrectMatchMessage] = useState(null);
   const [wrongMatchMessage, setWrongMatchMessage] = useState(null);
-  const history = useHistory(); 
 
   useEffect(() => {
     const fetchWords = async () => {
@@ -113,7 +111,7 @@ const TapThePair = () => {
 };
 
   const goToDashboard = () => {
-    history.push('/Dashboard'); 
+    window.location.href = '/dashboard'; 
   };
 
   return (
