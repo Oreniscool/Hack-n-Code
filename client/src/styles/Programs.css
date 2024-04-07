@@ -1,0 +1,94 @@
+.features {
+  display: flex;
+  gap: 8%;
+  height: 70%;
+  flex-direction: column;
+}
+
+.card {
+  padding-top: 2rem;
+  background-color: #f6f6f6;
+  height: 60vh;
+  width: 25vw;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.special {
+  padding-top: 0;
+  outline: gold 3px solid;
+}
+.special.card:before {
+  content: 'Most Recommended';
+  background-color: gold;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 1rem;
+}
+
+.Beginner {
+  transform: translateX(-300%);
+  animation: right-move 1.5s ease-out forwards;
+}
+
+.Intermediate {
+  transform: translateY(-300%);
+  animation: down-move 2s ease-out forwards;
+}
+
+.Advanced {
+  transform: translateX(300%);
+  animation: left-move 1.5s ease-out forwards;
+}
+
+@keyframes right-move {
+  20% {
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-33%);
+  }
+  75% {
+    transform: translateX(-15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes left-move {
+  20% {
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(33%);
+  }
+  75% {
+    transform: translateX(15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes down-move {
+  20% {
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-33%);
+  }
+  75% {
+    transform: translateY(-15%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

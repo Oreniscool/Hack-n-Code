@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .word-section {
+    margin-right: 20px;
+  }
+  
+  .word {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .word.selected {
+    background-color: lightgray;
+  }
+  
+  .word.matched {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .score-section {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
