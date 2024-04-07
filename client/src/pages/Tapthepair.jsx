@@ -19,7 +19,7 @@ const TapThePair = () => {
       const data = await response.json();
       const translations = await Promise.all(
         data.map(async (word) => {
-          const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyDsczIcr3Xfe-aDoTop6sMu9F-ITlh0aD0&q=${word}&target=es`);
+          const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY&q=${word}&target=es`);
           const translationData = await response.json();
           return translationData.data.translations[0].translatedText;
         })
@@ -110,6 +110,9 @@ const TapThePair = () => {
     }
 };
 
+  const goToDashboard = () => {
+    window.location.href = '/dashboard'; 
+  };
 
   return (
     <div className="container">
@@ -142,10 +145,9 @@ const TapThePair = () => {
         {correctMatchMessage && <p>{correctMatchMessage}</p>}
         {wrongMatchMessage && <p>{wrongMatchMessage}</p>}
       </div>
+      <button className="go-to-dashboard" onClick={goToDashboard}>Go to Dashboard</button>
     </div>
   );
 };
 
 export default TapThePair;
-
-
